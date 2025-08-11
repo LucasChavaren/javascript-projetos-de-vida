@@ -35,8 +35,8 @@ minutos %= 60;
 horas %= 24;
 
 if(tempoFinal > 0){
-return [dias, horas, minutos, segundos] ;
-}else{
+    return [dias, horas, minutos, segundos] ;
+} else {
     return [0, 0, 0, 0];
 }
 
@@ -53,4 +53,5 @@ function comecaCronometro(){
     atualizaCronometro();
     setInterval(atualizaCronometro, 1000);
 }
+
 comecaCronometro();

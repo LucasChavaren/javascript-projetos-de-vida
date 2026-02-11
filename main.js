@@ -1,5 +1,5 @@
-const botoes = document.querySelectorAll(".botao");
-const textos = document.querySelectorAll(".aba-conteudo");
+const botoes = document.querySelectorAll(".botao"); /*variável declarada que não pode ser reatribuída, e retorna uma lista de elementos dos botões no site */
+const textos = document.querySelectorAll(".aba-conteudo"); /*essa linha faz com que apareça os objetivos dependendo da aba que for clicada */
 
 for (let i = 0; i < botoes.length; i++) {
     botoes[i].onclick = function () {
@@ -12,15 +12,15 @@ for (let i = 0; i < botoes.length; i++) {
         botoes[i].classList.add("ativo");
         textos[i].classList.add("ativo");
     }
-}
+} /*alterna o botão e o texto ativo ao clicar*/
 
 const contadores = document.querySelectorAll(".contador");
 const tempoObjetivo1 = new Date("2025-10-05T00:00:00");
 const tempoObjetivo2 = new Date("2025-12-05T00:00:00");
 const tempoObjetivo3 = new Date("2025-12-20T00:00:00");
-const tempoObjetivo4 = new Date("2026-02-05T00:00:00");
+const tempoObjetivo4 = new Date("2026-02-05T00:00:00"); 
 
-const tempos = [tempoObjetivo1, tempoObjetivo2, tempoObjetivo3, tempoObjetivo4];
+const tempos = [tempoObjetivo1, tempoObjetivo2, tempoObjetivo3, tempoObjetivo4]; /*variável com datas até concluir o objetivo. Esta linha de código (17-23) pode ser usada em programas para agendar datas com eventos específicos que terão no dia*/
 
 
 function calculaTempo(tempoObjetivo) {
@@ -40,7 +40,7 @@ function calculaTempo(tempoObjetivo) {
     }else{
         return [0, 0, 0, 0];
     } 
-}
+} /*função para calcular o tempo que falta para concluir o objetivo até chegar no zero. Serve para usar em programas com cronômetros e temporizadores*/
 
 function atualizaCronometro(){
     for (let i = 0; i < contadores.length; i++){
@@ -50,10 +50,10 @@ function atualizaCronometro(){
         document.getElementById("min" + i).textContent = tempoCalculado[2];
         document.getElementById("seg" + i).textContent = tempoCalculado[3];
     }
-}
+} /*função que calcula o tempo restante e atualiza os dias, horas, minutos e segundos*/
 
 function comecaCronometro(){
     atualizaCronometro();
     setInterval(atualizaCronometro, 1000);
-}
+} /*função que inicia o cronômetro e atualiza os segundos*/
 comecaCronometro();
